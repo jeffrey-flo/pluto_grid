@@ -393,7 +393,7 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
 
   late final PlutoGridStateManager _stateManager;
 
-  late final PlutoGridKeyManager _keyManager;
+  PlutoGridKeyManager? _keyManager;
 
   late final PlutoGridEventManager _eventManager;
 
@@ -460,7 +460,6 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
       _showColumnGroups,
       stateManager.showColumnGroups,
     );
-
 
     _showFrozenColumn = update<bool>(
       _showFrozenColumn,
@@ -536,13 +535,13 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
       stateManager: _stateManager,
     );
 
-    _keyManager.init();
+    _keyManager?.init();
 
     _stateManager.setKeyManager(_keyManager);
 
     // Dispose
     _disposeList.add(() {
-      _keyManager.dispose();
+      _keyManager?.dispose();
     });
   }
 
@@ -596,14 +595,15 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
   }
 
   KeyEventResult _handleGridFocusOnKey(FocusNode focusNode, RawKeyEvent event) {
-    if (_keyManager.eventResult.isSkip == false) {
-      _keyManager.subject.add(PlutoKeyManagerEvent(
+    if (_keyManager?.eventResult.isSkip == false) {
+      _keyManager?.subject.add(PlutoKeyManagerEvent(
         focusNode: focusNode,
         event: event,
       ));
     }
 
-    return _keyManager.eventResult.consume(KeyEventResult.handled);
+    return _keyManager?.eventResult.consume(KeyEventResult.handled) ??
+        KeyEventResult.ignored;
   }
 
   @override
