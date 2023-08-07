@@ -657,10 +657,10 @@ class _HeaderState extends State<_Header> {
     return PlutoMenuBar(
       borderColor: Colors.transparent,
       mode: _isMobile ? PlutoMenuBarMode.tap : PlutoMenuBarMode.hover,
-      textStyle: const TextStyle(
-        color: Colors.black,
-        fontSize: 14,
-      ),
+      // textStyle: const TextStyle(
+      //   color: Colors.black,
+      //   fontSize: 14,
+      // ),
       menus: [
         PlutoMenuItem(
           title: 'Home',
