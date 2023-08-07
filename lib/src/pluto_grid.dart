@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart' show Intl;
 import 'package:pluto_grid/pluto_grid.dart';
@@ -403,7 +404,7 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
   void initState() {
     _initStateManager();
 
-    _initKeyManager();
+    // _initKeyManager();
 
     _initEventManager();
 
@@ -459,6 +460,7 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
       _showColumnGroups,
       stateManager.showColumnGroups,
     );
+
 
     _showFrozenColumn = update<bool>(
       _showFrozenColumn,
