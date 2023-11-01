@@ -36,9 +36,9 @@ class PlutoLoading extends StatelessWidget {
         );
       case PlutoGridLoadingLevel.rowsBottomCircular:
         return const CircularProgressIndicator.adaptive(
-          backgroundColor: Colors.transparent,
-          // color: indicatorColor,
-        );
+            // backgroundColor: Colors.transparent,
+            // color: indicatorColor,
+            );
     }
   }
 }
@@ -73,11 +73,11 @@ class _GridLoading extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              CircularProgressIndicator.adaptive(
-                backgroundColor: backgroundColor ?? Colors.white,
-                // color: indicatorColor ?? Colors.lightBlue,
-                strokeWidth: 2,
-              ),
+              const CircularProgressIndicator.adaptive(
+                  // backgroundColor: backgroundColor ?? Colors.white,
+                  // color: indicatorColor ?? Colors.lightBlue,
+                  // strokeWidth: 2,
+                  ),
               const SizedBox(height: 10),
               Text(
                 text ?? 'Loading',
