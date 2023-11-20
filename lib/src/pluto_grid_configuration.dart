@@ -1183,7 +1183,7 @@ class PlutoGridLocaleText {
     this.hour = '시',
     this.minute = '분',
     // Common
-    this.loadingText = '로딩중',
+    this.loadingText = '로드 중',
   });
 
   const PlutoGridLocaleText.russian({
