@@ -15,12 +15,12 @@ dependencies:
   pluto_grid:
     path: ../..
   csv: ^5.1.1
-  pdf: ^3.10.6
+  pdf: ^3.10.7
   printing: ^5.11.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   mockito: ^5.4.3
-  build_runner: ^2.4.6
+  build_runner: ^2.4.7
   flutter_lints: ^3.0.1
