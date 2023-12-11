@@ -77,6 +77,7 @@ class PlutoGrid extends PlutoStatefulWidget {
     this.configuration = const PlutoGridConfiguration(),
     this.notifierFilterResolver,
     this.mode = PlutoGridMode.normal,
+    this.enableKeyManager = false,
   }) : super(key: key);
 
   /// {@template pluto_grid_property_columns}
@@ -325,6 +326,8 @@ class PlutoGrid extends PlutoStatefulWidget {
   /// {@macro pluto_grid_mode_popup}
   final PlutoGridMode mode;
 
+  final bool enableKeyManager;
+
   /// [setDefaultLocale] sets locale when [Intl] package is used in [PlutoGrid].
   ///
   /// {@template intl_default_locale}
@@ -404,7 +407,9 @@ class PlutoGridState extends PlutoStateWithChange<PlutoGrid> {
   void initState() {
     _initStateManager();
 
-    // _initKeyManager();
+    if (widget.enableKeyManager) {
+      _initKeyManager();
+    }
 
     _initEventManager();
 
