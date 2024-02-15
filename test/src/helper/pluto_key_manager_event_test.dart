@@ -8,7 +8,7 @@ void main() {
 
   late PlutoKeyManagerEvent? keyManagerEvent;
 
-  KeyEventResult callback(FocusNode node, RawKeyEvent event) {
+  KeyEventResult callback(FocusNode node, KeyEvent event) {
     keyManagerEvent = PlutoKeyManagerEvent(
       focusNode: node,
       event: event,
@@ -62,7 +62,7 @@ void main() {
     (tester) async {
       late PlutoKeyManagerEvent keyManagerEvent;
 
-      KeyEventResult callback(FocusNode node, RawKeyEvent event) {
+      KeyEventResult callback(FocusNode node, KeyEvent event) {
         keyManagerEvent = PlutoKeyManagerEvent(
           focusNode: node,
           event: event,

@@ -1,9 +1,11 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class PlutoKeyManagerEvent {
   FocusNode focusNode;
-  RawKeyEvent event;
+  KeyEvent event;
 
   PlutoKeyManagerEvent({
     required this.focusNode,
@@ -94,15 +96,17 @@ class PlutoKeyManagerEvent {
   }
 
   bool get isShiftPressed {
-    return event.isShiftPressed;
+    return event.logicalKey.keyId == LogicalKeyboardKey.shift.keyId;
   }
 
   bool get isCtrlPressed {
-    return event.isMetaPressed || event.isControlPressed;
+    return event.logicalKey.keyId == LogicalKeyboardKey.meta.keyId ||
+        event.logicalKey.keyId == LogicalKeyboardKey.control.keyId;
   }
 
   bool get isAltPressed {
-    return event.isAltPressed;
+    return event.logicalKey.keyId ==
+        LogicalKeyboardKey.alt.keyId; // event.isAltPressed;
   }
 
   bool get isModifierPressed {

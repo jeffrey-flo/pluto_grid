@@ -22,6 +22,6 @@ dependency_overrides:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  mockito: ^5.4.3
-  build_runner: ^2.4.7
+  mockito: ^5.4.4
+  build_runner: ^2.4.8
   flutter_lints: ^3.0.1
