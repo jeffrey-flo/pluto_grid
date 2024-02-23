@@ -250,7 +250,9 @@ class PlutoGridActionDefaultTab extends PlutoGridShortcutAction {
 
     final saveIsEditing = stateManager.isEditing;
 
-    keyEvent.isShiftPressed
+    keyEvent.event.logicalKey.keyId == LogicalKeyboardKey.shiftLeft.keyId ||
+            keyEvent.event.logicalKey.keyId ==
+                LogicalKeyboardKey.shiftRight.keyId
         ? _moveCellPrevious(stateManager)
         : _moveCellNext(stateManager);
 
@@ -408,7 +410,10 @@ class PlutoGridActionDefaultEnterKey extends PlutoGridShortcutAction {
     }
 
     if (enterKeyAction.isEditingAndMoveDown) {
-      if (keyEvent.isShiftPressed) {
+      if (keyEvent.event.logicalKey.keyId ==
+              LogicalKeyboardKey.shiftRight.keyId ||
+          keyEvent.event.logicalKey.keyId ==
+              LogicalKeyboardKey.shiftLeft.keyId) {
         stateManager.moveCurrentCell(
           PlutoMoveDirection.up,
           notify: false,
@@ -420,7 +425,10 @@ class PlutoGridActionDefaultEnterKey extends PlutoGridShortcutAction {
         );
       }
     } else if (enterKeyAction.isEditingAndMoveRight) {
-      if (keyEvent.isShiftPressed) {
+      if (keyEvent.event.logicalKey.keyId ==
+              LogicalKeyboardKey.shiftRight.keyId ||
+          keyEvent.event.logicalKey.keyId ==
+              LogicalKeyboardKey.shiftLeft.keyId) {
         stateManager.moveCurrentCell(
           PlutoMoveDirection.left,
           force: true,
