@@ -16,8 +16,10 @@ dependencies:
   intl: ^0.19.0
   rxdart: ^0.27.7
 
-dependency_overrides:
-  collection: 1.18.0
+  collection: any
+
+#dependency_overrides:
+#  collection: 1.18.0
 
 dev_dependencies:
   flutter_test:
@@ -25,3 +27,4 @@ dev_dependencies:
   mockito: ^5.4.4
   build_runner: ^2.4.8
   flutter_lints: ^3.0.1
+
