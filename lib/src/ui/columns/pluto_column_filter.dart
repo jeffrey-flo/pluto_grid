@@ -169,9 +169,9 @@ class PlutoColumnFilterState extends PlutoStateWithChange<PlutoColumnFilter> {
         return KeyEventResult.handled;
       }
 
-      return stateManager.keyManager!.eventResult.skip(
+      return stateManager.keyManager?.eventResult.skip(
         KeyEventResult.ignored,
-      );
+      ) ?? KeyEventResult.ignored;
     }
 
     if (handleMoveDown) {
