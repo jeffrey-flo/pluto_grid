@@ -192,8 +192,8 @@ class _RowContainerWidget extends PlutoStatefulWidget {
     required this.row,
     required this.enableRowColorAnimation,
     required this.child,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   State<_RowContainerWidget> createState() => _RowContainerWidgetState();
@@ -361,8 +361,8 @@ class _AnimatedOrNormalContainer extends StatelessWidget {
     required this.enable,
     required this.child,
     required this.decoration,
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
