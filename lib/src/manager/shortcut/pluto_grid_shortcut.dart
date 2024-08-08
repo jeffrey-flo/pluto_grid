@@ -30,7 +30,12 @@ class PlutoGridShortcut {
     required HardwareKeyboard state,
   }) {
     for (final action in actions.entries) {
-      if (action.key.accepts(keyEvent.event, state)) {
+      // if (action.key.accepts(keyEvent.event, state)) {
+      //   action.value.execute(keyEvent: keyEvent, stateManager: stateManager);
+      //   return true;
+      // }
+      if (action.key
+          .accepts(keyEvent.event as KeyEvent, state as HardwareKeyboard)) {
         action.value.execute(keyEvent: keyEvent, stateManager: stateManager);
         return true;
       }
