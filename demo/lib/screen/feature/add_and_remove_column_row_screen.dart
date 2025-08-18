@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:faker/faker.dart';
+import 'package:faker/faker.dart' as fk;
 import 'package:flutter/material.dart';
 import 'package:pluto_grid/pluto_grid.dart';
 
@@ -75,7 +75,7 @@ class _AddAndRemoveColumnRowScreenState
           TextSpan(text: 'Status'),
         ]),
         renderer: (rendererContext) {
-          Color textColor = Colors.black;
+          Color? textColor = Colors.black!;
 
           if (rendererContext.cell.value == 'saved') {
             textColor = Colors.green;
@@ -177,7 +177,7 @@ class _Header extends StatefulWidget {
 }
 
 class _HeaderState extends State<_Header> {
-  final faker = Faker();
+  final faker = fk.Faker();
 
   int addCount = 1;
 
